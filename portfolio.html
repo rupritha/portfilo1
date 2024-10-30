@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SIKHAKOLLI NITISH KUMAR - Computer Science Engineering Student Portfolio">
+    <meta name="keywords" content="SIKHAKOLLI NITISH KUMAR, Computer Science, Web Development, DSA, SRM IST">
+    <title>SIKHAKOLLI NITISH KUMAR - Software Developer Portfolio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #311ab3;
+            --secondary-color: #9f3524;
+            --accent-color: #43a06d;
+            --light-accent: #bf0f0f;
+            --text-color: #7d196d;
+            
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--text-color);
+        }
+
+        .nav {
+            background: var(--primary-color);
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(162, 36, 36, 0.1);
+        }
+
+        .nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .nav a {
+            color: rgb(255, 255, 255);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+        }
+
+        .nav a:hover {
+            background: var(--secondary-color);
+        }
+
+        .hero {
+            background: linear-gradient(rgba(188, 173, 162, 0.368), rgba(246, 252, 246, 0.95)), url('/api/placeholder/1920/1080');
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgb(74, 192, 101);
+            text-align: center;
+            padding: 2rem;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.8;
+            opacity: 0.9;
+            color: #235be9;
+        }
+
+        .section {
+            padding: 6rem 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--accent-color);
+            margin: 1rem auto;
+        }
+
+        .about {
+            background: var(--light-bg);
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
+
+        .skill-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-card {
+            background: rgb(213, 197, 197);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: var(--transition);
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        .skill-card h3 {
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem; 
+        }
+
+        .project-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: var(--transition);
+            border-top: 4px solid var(--accent-color);
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        .education-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+            transition: var(--transition);
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .education-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        .contact {
+            background: var(--light-bg);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .social-links a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            transition: var(--transition);
+            background: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .social-links a:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 768px) {
+            .nav ul {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .section {
+                padding: 4rem 1rem;
+            }
+
+            .social-links {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .social-links a {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>GRANDHI ROOPKUMAR RUPRITHA</h1>
+            <p>Software Developer | Web Designer</p>
+        </div>
+    </section>
+
+    <section id="about" class="section about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <img src="nitish pic.jpg" alt="" width="200px" height="200px">
+            <div class="about-content">
+                <p>I am a Computer Science Engineering with specialization BIG DATA ANALYTICS at SRM Institute of Science and Technology of second-year. With a strong foundation in multiple programming languages including C, C++, and Python. Creative and detail-oriented professional with a passion for innovative design and problem solving . I am dedicated to creating efficient solutions and continuously expanding my technical expertise.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="education" class="section">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            <div class="education-card">
+                <h3>B.Tech in Computer Science Engineering (BDA)</h3>
+                <p>SRM Institute of Science and Technology (SRM IST)</p>
+                <p>Batch : 2023 - 2027</p>
+                <p>Current: Second Year</p>
+                <p>Focus Areas: Programming, Web Development</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="section">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skill-grid">
+                <div class="skill-card">
+                    <h3>Programming Languages</h3>
+                    <p>• C Programming</p>
+                    <p>• Python Programming</p>
+                    <P>. Java Programming</P>
+                </div>
+                <div class="skill-card">
+                    <h3>Web Development</h3>
+                    <p>• Frontend Development</p>
+                    <p>• Responsive Design</p>
+                    <p>• Web Technologies</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Tools & Technologies</h3>
+                    <p>• Git Version Control</p>
+                    <p>• Development Tools</p>
+                    <p>• Code Analysis</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <h3>super market billing system</h3>
+                        <p>Developed a fully functional Super market billing system website with login id,product details,shopping cart,adresss n.Implemented<p></p>
+                        
+                    <p><strong>Technologies:</strong> C++, Python,     Javascript, MySQL</p>
+                </div>
+                <div class="project-card">
+                    <h3>NOTES AND PASSWORD MANAGEMENT</h3>
+                    <p>Notes and Password management with personal notes,personal passwords,suggesting passwords,..</p>
+                    <p><strong>Technologies:</strong>OpenCV, CSS, Python</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p>Interested in collaboration or have a project in mind? Let's connect!</p>
+            <div class="social-links">
+                <a href="mailto:ruprithagr@gmail.com">
+                    <i class="fas fa-envelope"></i>
+                    ruprithagr@gmail.com
+                </a>
+                <a href="https://github.com/rupritha" target="_blank">
+                    <i class="fab fa-github"></i>
+                    GitHub Profile
+                </a>
+                <a href="https://www.linkedin.com/in/rupritha-gr-599a46295?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                    LinkedIn Profile
+                </a>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
